@@ -81,7 +81,7 @@ class PythonBasic():
             convert_str += char
         print(convert_str)
     
-    def guest_word():
+    def GuestWord():
         sosmed_words = ['twitter','instagram','facebook']
         random_word = rd.choice(sosmed_words)
 
@@ -111,52 +111,58 @@ class PythonBasic():
                 end_game = True
                 print("You win")
 
-# answer = input("guest a word ? ")
-# word_answer = answer.split(" ")
-
-# if len(word_answer) > 2:
-#     print(word_answer)
-#     to_string = " ".join(word_answer)
-#     print(to_string)
-# else:
-#     print("Your input less than 3 words")
-
-# answer = input("guest some of number ! ")
-# num_answer = answer.split(",")
-# box = 0
-# for number in num_answer:
-#     if int(number) > box:
-#         box = int(number)
-# print(box)
-print("----- bidding game -----")
-def play():
-    name = input("what is your name ? ")
-    bid = int(input("how much did you bid ? "))
-    bid_dic = {}
-    bid_dic[name] = bid
-    print(f"the higher is {bid_dic[name]}")
-    next_bid = input("did anyone bid more higher ? press y/n ")
-    if next_bid == "y":
-        name2 = input("what is your name ? ")
-        bid2 = int(input("how much did you bid ? "))
-        bid_dic[name2] = bid2
-        while bid_dic[name2] > bid_dic[name]:
-            bid_dic[name2]
-            print(f"the higher is {bid_dic[name2]}")
+    def Auction():
+        print("----- bidding game -----")
+        def play():
+            name = input("what is your name ? ")
+            bid = int(input("how much did you bid ? "))
+            bid_dic = {}
+            bid_dic[name] = bid
+            print(f"the higher is {bid_dic[name]}")
             next_bid = input("did anyone bid more higher ? press y/n ")
             if next_bid == "y":
-                return play()
+                name2 = input("what is your name ? ")
+                bid2 = int(input("how much did you bid ? "))
+                bid_dic[name2] = bid2
+                while bid_dic[name2] > bid_dic[name]:
+                    bid_dic[name2]
+                    print(f"the higher is {bid_dic[name2]}")
+                    next_bid = input("did anyone bid more higher ? press y/n ")
+                    if next_bid == "y":
+                        return play()
+                    else:
+                        print(f"the higher is {bid_dic[name2]}")
             else:
-                print(f"the higher is {bid_dic[name2]}")
-    else:
-        print(f"the higher is {bid_dic[name]}")
-play()
-# num = int(input("guest a number ? "))
-# a = 0
-# while num > a:
-#     a = num
-#     print(f"the higher is {a}")
-#     num = int(input("guest a number ? "))
+                print(f"the higher is {bid_dic[name]}")
+        play()
+
+def calculator():
+    print("----- welcome to calculator -----")
+    num1 = int(input("first number : "))
+    operator = input("operator + , - , * , /, : ")
+    num2 = int(input("second number : "))
+    add = num1 + num2
+    subtr = num1 - num2
+    mutiply = num1 * num2
+    devide = num1 / num2
+    operations = {
+        "+": add,
+        "-": subtr,
+        "*": mutiply,
+        "/": devide,
+        }
+    if operator == "+":
+        print(operations["+"])
+    elif operator == "-":
+        print(operations["-"])
+    elif operator == "*":
+        print(operations["*"])
+    elif operator == "/":
+        print(operations["/"])
+
+
+calculator()
+
 
 class codewars():
     def find_needle(haystack):
