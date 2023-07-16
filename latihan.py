@@ -161,7 +161,6 @@ def calculator():
         print(operations["/"])
 
 
-calculator()
 
 
 class codewars():
@@ -170,7 +169,6 @@ class codewars():
         if find in haystack:
             position = haystack.index(find)
             print(f"find needle at position {position}")
-
     #find_needle(["baso",1,'ayam geprek',"needle"])
 
     def friend(x):
@@ -179,5 +177,34 @@ class codewars():
             if len(a) == 4:
                 list += [a]
         print(list)
-
     #friend(["rino","setiyo","hadi","mustofa"])
+
+    def longest_consec(strarr, k):
+        list = []
+        for a in strarr:
+            list += [a]
+        str = ""
+        for a in list[0:k]:
+            str += a
+        print(str)
+    # longest_consec(["rino","rini","hadi"], 2 )
+
+    def sum_mix(arr):
+        num = 0
+        for a in arr:
+            num += int(a)
+        print(num)
+    # sum_mix([8,'16'])
+
+    def fake_bin(x):
+        str = ""
+        for a in x:
+            if int(a) < 5:
+                a = "0"
+                str += a
+            else:
+                a = "1"
+                str += a
+            str
+        print(str)
+    fake_bin("45385593107843568")
