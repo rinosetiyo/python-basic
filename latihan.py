@@ -82,6 +82,7 @@ class PythonBasic():
         print(convert_str)
     
     def GuestWord():
+        # can modify guest word
         sosmed_words = ['twitter','instagram','facebook']
         random_word = rd.choice(sosmed_words)
 
